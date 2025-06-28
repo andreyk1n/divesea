@@ -1,0 +1,63 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.button {
+    width: fit-content;
+    padding: 15px 24px;
+    border: 0;
+    outline: 0;
+    transition-duration: .5s;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+
+    &__black {
+        background-color: #000;
+        color: #fff;
+        border: 3px solid #000;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+            border: 3px solid #000;
+        }
+
+        &--inverse {
+            border: 3px solid #000;
+            background-color: #fff;
+            color: #000;
+
+            &:hover {
+                background-color: #000;
+                color: #fff;
+                border: 3px solid #000;
+            }
+        }
+    }
+
+    &__white {
+        text-transform: none;
+        border: 3px solid #fff;
+        background-color: #fff;
+        color: #000;
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
+            border: 3px solid #000;
+        }
+
+        &--inverse {
+            border: 3px solid #fff;
+            background-color: #000;
+            color: #fff;
+
+            &:hover {
+                color: #000;
+                background-color: #fff;
+                border: 3px solid #000;
+            }
+        }
+    }
+}

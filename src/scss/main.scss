@@ -1,6 +1,7 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 @use 'partials/header';
+@use 'components/buttons';
 @use 'partials/footer';
 
 
@@ -69,6 +70,11 @@ body {
     flex-direction: column;
     width: 100%;
     justify-content: center;
+    &--components {
+        padding: 30px;
+        gap: 20px;
+        background-color: lightgray;
+    }
 }
 
 .no-scroll {
@@ -96,30 +102,6 @@ a:hover {
 
 a:active {
     color: $activeColor;
-}
-
-// Застосування стилів для кнопкки з класом .button
-.button {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $buttonBgColor;
-    transition-duration: $transitionDuration;
-    color: $buttonFontColor;
-    padding: $buttonPaddings;
-    border-radius: $buttonBorderRadius;
-    cursor: pointer;
-    border: 0;
-    outline: 0;
-}
-
-.button:hover {
-    background-color: $buttonHover;
-}
-
-.button:active {
-    background-color: $buttonActive;
 }
 
 // Загальні стилі для списків
