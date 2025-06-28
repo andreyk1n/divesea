@@ -1,1 +1,1 @@
-function initScrollControlledHeader(){let l=0,o=document.querySelector(".header");window.addEventListener("scroll",()=>{var e=window.pageYOffset;o.classList.toggle("scroll-header",10<e),o.style.top=e<=10||e<l?"0":"-100px",l=e})}export{initScrollControlledHeader};
+function initScrollControlledHeader(){let l=document.querySelector(".header");window.addEventListener("scroll",()=>{var e=window.pageYOffset;l.classList.toggle("header--scrolled",10<e)})}export{initScrollControlledHeader};
