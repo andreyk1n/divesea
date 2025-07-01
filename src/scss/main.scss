@@ -2,6 +2,7 @@
 @use 'mixins' as *;
 @use 'partials/header';
 @use 'components/buttons';
+@use 'components/banner';
 @use 'partials/footer';
 
 
@@ -71,9 +72,15 @@ body {
     width: 100%;
     justify-content: center;
     &--components {
-        padding: 30px;
+        padding: 150px 30px 30px 30px;
         gap: 20px;
         background-color: lightgray;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
