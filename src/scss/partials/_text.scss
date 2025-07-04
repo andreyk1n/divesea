@@ -1,0 +1,16 @@
+.title {
+    color: #141416;
+    font-size: clamp(30px, 5vw, 45px);
+
+    &--big {
+        font-size: clamp(47px, 5vw, 75px);
+    }
+
+    &--white {
+        color: #fff;
+    }
+
+    span {
+        color: #C5C5C5;
+    }
+}
