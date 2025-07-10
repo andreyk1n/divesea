@@ -91,3 +91,16 @@ initScrollControlledHeader(); // Ініціалізація функціонал
 // import { toggleActive } from './functions/toggleActive.js';
 // toggleActive(); // Ініціалізація функції
 // ==============================================================================================
+
+document.querySelectorAll('.market__timer').forEach(el => {
+    let [h, m, s] = el.textContent.match(/\d+/g).map(Number);
+    let total = h * 3600 + m * 60 + s;
+
+    let t = setInterval(() => {
+      if (--total < 0) return clearInterval(t);
+      let hh = String(Math.floor(total / 3600)).padStart(2, '0');
+      let mm = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
+      let ss = String(total % 60).padStart(2, '0');
+      el.textContent = `${hh}h ${mm}m ${ss}s`;
+    }, 1000);
+  });
