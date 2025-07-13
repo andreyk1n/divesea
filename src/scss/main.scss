@@ -5,6 +5,7 @@
 @use 'partials/text';
 @use 'components/banner';
 @use 'components/market';
+@use 'components/table';
 @use 'partials/footer';
 
 
@@ -135,6 +136,27 @@ h1 {
 // Обнулення стилів автозаповнення форми
 input {
     // background: #fff !important;
+}
+
+.explore {
+    color: #ACADB9;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-self: flex-end;
+    margin-top: 50px;
+
+    &:hover {
+        color: #ACADB9;
+        svg {
+            margin-left: 15px;
+        }
+    }
+
+    svg {
+        margin-left: 5px;
+        transition-duration: $transitionDuration;
+    }
 }
 
 :-webkit-autofill,

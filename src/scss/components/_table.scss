@@ -1,0 +1,92 @@
+.table {
+    width: 100%;
+    padding: 120px 0;
+
+    @media (max-width: 992px) {
+        padding: 60px 0;
+    }
+
+    &__table {
+        margin-top: 60px;
+        overflow-x: auto;
+        width: 100%;
+
+        table {
+            width: 100%;
+            min-width: 700px;
+            overflow-y: auto;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            color: #111;
+
+            thead {
+                text-align: left;
+                border-bottom: 1px solid #e0e0e0;
+
+                th {
+                    padding: 12px 8px;
+                    font-weight: 600;
+                    color: #666;
+                }
+            }
+
+            tbody {
+                tr {
+                    border-bottom: 1px solid #f0f0f0;
+                    transition: background 0.2s;
+
+                    &:hover {
+                        background-color: #f0f0f08f;
+                    }
+
+                    td {
+                        padding: 14px 8px;
+                        vertical-align: middle;
+
+                        &:first-child {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+                            img {
+                                width: 60px;
+                                height: 60px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                            }
+
+                            div {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 5px;
+
+                                strong {
+                                    font-weight: 600;
+                                    color: #222;
+                                }
+
+                                small {
+                                    color: #888;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+
+                        img {
+                            vertical-align: middle;
+                            margin-right: 4px;
+                        }
+
+                        &:nth-child(3) {
+                            color: #16c784;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}
