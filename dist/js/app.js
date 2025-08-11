@@ -104,3 +104,27 @@ document.querySelectorAll('.market__timer').forEach(el => {
       el.textContent = `${hh}h ${mm}m ${ss}s`;
     }, 1000);
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".slider");
+  const items = slider.querySelectorAll(".slider__item");
+  const btnPrev = slider.querySelector(".slider__button--prev");
+  const btnNext = slider.querySelector(".slider__button--next");
+
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    items.forEach(item => item.classList.remove("slider__item--active"));
+    items[index].classList.add("slider__item--active");
+  }
+
+  btnNext.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    showSlide(currentIndex);
+  });
+
+  btnPrev.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    showSlide(currentIndex);
+  });
+});

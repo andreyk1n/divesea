@@ -1,3 +1,41 @@
 .hero {
     padding: 215px 0 160px 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        max-width: calc(50% - 24px);
+    }
+
+    &__slider {
+        max-width: calc(50% - 24px);
+    }
+
+    &__nums {
+        max-width: 452px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__num {
+        display: flex;
+        flex-direction: column;
+        span {
+            display: block;
+        }
+    }
+}
+
+
+
+.slider__item {
+  display: none;
+}
+.slider__item.slider__item--active {
+  display: block;
 }
