@@ -92,39 +92,26 @@ initScrollControlledHeader(); // Ініціалізація функціонал
 // toggleActive(); // Ініціалізація функції
 // ==============================================================================================
 
-document.querySelectorAll('.market__timer').forEach(el => {
-    let [h, m, s] = el.textContent.match(/\d+/g).map(Number);
-    let total = h * 3600 + m * 60 + s;
-
-    let t = setInterval(() => {
-      if (--total < 0) return clearInterval(t);
-      let hh = String(Math.floor(total / 3600)).padStart(2, '0');
-      let mm = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
-      let ss = String(total % 60).padStart(2, '0');
-      el.textContent = `${hh}h ${mm}m ${ss}s`;
-    }, 1000);
-  });
-
-  document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector(".slider");
-  const items = slider.querySelectorAll(".slider__item");
-  const btnPrev = slider.querySelector(".slider__button--prev");
-  const btnNext = slider.querySelector(".slider__button--next");
-
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".slider__item");
   let currentIndex = 0;
 
-  function showSlide(index) {
-    items.forEach(item => item.classList.remove("slider__item--active"));
-    items[index].classList.add("slider__item--active");
-  }
+  const showSlide = i => {
+    items.forEach((el, idx) => {
+      el.classList.toggle("slider__item--active", idx === i);
+      el.classList.toggle(
+        "slider__item--hidden",
+        idx !== i && idx !== (i + 1 + items.length) % items.length
+      );
+    });
+  };
 
-  btnNext.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % items.length;
-    showSlide(currentIndex);
-  });
+  document.querySelector(".slider__button--next").onclick = () =>
+    showSlide(currentIndex = (currentIndex + 1) % items.length);
 
-  btnPrev.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    showSlide(currentIndex);
-  });
+  document.querySelector(".slider__button--prev").onclick = () =>
+    showSlide(currentIndex = (currentIndex - 1 + items.length) % items.length);
+
+  showSlide(currentIndex);
 });
+
