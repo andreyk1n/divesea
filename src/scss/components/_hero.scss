@@ -1,10 +1,10 @@
 .hero {
-    padding: 160px 0 160px 0;
+    padding: 190px 0 160px 0;
 
     &__container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
 
     &__title {
@@ -18,6 +18,7 @@
         margin-bottom: 45px;
         max-width: 500px;
         color: #676767;
+        line-height: 150%;
     }
 
     &__text {
@@ -61,14 +62,20 @@
             font-size: 36px;
         }
     }
+
+    &__buttons {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
 }
 
 .slider {
     &__items {
         position: relative;
-        overflow-x: hidden;
+        // overflow-x: hidden;
         width: 750px;
-        height: 550px;
+        height: 460px;
     }
 
     &__item {
@@ -82,8 +89,9 @@
         max-width: 320px;
         max-height: 320px;
         transition-duration: .5s;
-        border-radius: 25px;
+        border-radius: 30px;
         opacity: 1;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 60px rgba(0, 0, 0, 0.04);
 
         &--active {
             max-width: 391px;
@@ -98,6 +106,10 @@
         &--hidden {
             opacity: 0;
         }
+    }
+
+    &__buttons {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
     }
 }
 
