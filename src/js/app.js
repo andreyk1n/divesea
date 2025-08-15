@@ -31,8 +31,8 @@ initBurgerMenu(); // Ініціалізація бургер-меню
 // **Аккордіон**
 // Додає функціонал аккордіонів для приховування та розгортання контенту.
 // Інструкція: https://andreyk1n.github.io/starter-theme-docs/accordion.html
-// import { initAccordion } from './functions/accordion.js';
-// initAccordion(); // Ініціалізація аккордіонів
+import { initAccordion } from './functions/accordion.js';
+initAccordion(); // Ініціалізація аккордіонів
 // **Примітка**: Не забудьте підключити стилі для аккордіону окремо.
 // ==============================================================================================
 
